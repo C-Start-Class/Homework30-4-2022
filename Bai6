@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int main()
+{
+    int n;
+    int sum=0,count=0;
+    printf("Nhap chieu dai cua mang: ");
+    scanf("%d",&n);
+    printf("Nhap cac phan tu cua mang: \n");
+    int arr[n];
+    for(int i = 0; i <n;i++){
+        printf("arr[%d] = ",i);
+        scanf("%d",&arr[i]);
+    }
+    for(int i=0;i<n;i++){
+        if(arr[i]>=0){
+            sum+=arr[i];
+            count++;
+        }
+    }
+    printf("Trung binh cong cua cac so co gia tri khong am la: %d",(sum/count));
+}
