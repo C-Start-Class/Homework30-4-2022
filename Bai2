@@ -1,0 +1,39 @@
+#include <stdio.h>
+
+int TimMax(int i,int n,int m, int arr[n][m]){
+    int max = arr[i][0];
+    for(int j = 0; j <m;j++){
+        if(arr[i][j]>max){
+                max = arr[i][j];
+        }
+    }
+    return max;
+}
+int TimMin(int i,int n,int m, int arr[n][m]){
+    int min = arr[i][0];
+    for(int j = 0; j <m;j++){
+        if(arr[i][j]<min){
+            min = arr[i][j];
+        }
+    }
+    return min;
+}
+int main()
+{
+    int n,m;//n la so dong, m la so cot cua mang
+    printf("Nhap kich thuoc cua mang 2 chieu {n,m}: ");
+    scanf("%d%d",&n,&m);
+    int arr[n][m];
+    printf("Nhap cac phan tu cua mang: \n");
+    for(int i = 0; i < n; i++){
+        for(int j = 0; j < m; j++){
+            printf("arr[%d][%d]= ",i,j);
+            scanf("%d",&arr[i][j]);
+        }
+    }
+    for(int i = 0 ; i < n; i++){
+        int max = TimMax(i,n,m,arr);
+        int min = TimMin(i,n,m,arr);
+        printf("Dong %d co (min,max,middle) la: (%d, %d, %d)\n",i+1,min,max,(max+min)/2);
+    }
+}
